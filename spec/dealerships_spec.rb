@@ -1,11 +1,11 @@
 require('rspec')
 require('dealerships')
-# require('vehicle')
+require('vehicle')
 
 describe(Dealership) do
-  # before() do
-  #   Dealership.clear()
-  # end
+  before() do
+    Dealership.clear()
+  end
 
   describe('#name') do
     it("returns the name of the dealership") do
@@ -63,7 +63,7 @@ describe(Dealership) do
       expect(Dealership.find(test_dealership.id())).to(eq(test_dealership))
     end
   end
-  
+
   describe("#add_vehicle") do
     it("adds a Vehicle to the dealership's inventory") do
       test_dealership = Dealership.new("Bob's Used Cars")
